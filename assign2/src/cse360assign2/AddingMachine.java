@@ -17,10 +17,16 @@ public class AddingMachine {
 	private int total;
 	
 	/**
+	 * Stores string representation of additions and subtractions that the AddingMachine has encountered.
+	 */
+	private String history;
+	
+	/**
 	 * Default class constructor, sets total to a default value of zero.
 	 */
 	public AddingMachine() {
-		total = 0; // not needed - included for clarity
+		total = 0; 
+		history = "0";
 	}
 	
 	/**
@@ -29,7 +35,7 @@ public class AddingMachine {
 	 * @return value of total	
 	 */
 	public int getTotal() {
-		return 0;
+		return total;
 	}
 	
 	
@@ -39,7 +45,8 @@ public class AddingMachine {
 	 * @param value	what to add to the total
 	 */
 	public void add(int value) {
-		
+		total += value;
+		history += " + " + value;
 	}
 	
 	/**
@@ -48,7 +55,8 @@ public class AddingMachine {
 	 * @param value	what to subtract from the total
 	 */
 	public void subtract(int value) {
-		
+		total -= value;
+		history += " - " + value;
 	}
 	
 	/*
@@ -57,14 +65,15 @@ public class AddingMachine {
 	 * @return	a string representation of the AddingMachine object.
 	 */
 	public String toString() {
-		return "";
+		return history;
 	}
 	
 	/**
 	 * Resets the AddingMachine's properties.
 	 */
 	public void clear() {
-		
+		total = 0;
+		history = "0";
 	}
 	
 	
